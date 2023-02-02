@@ -2,6 +2,7 @@
   "dependencies": {
     "expo": "^47.0.0",
     "expo-linear-gradient": "~12.0.1",
+    "firebase": "^9.16.0",
     "nativewind": "^2.0.11",
     "react": "18.1.0",
     "react-dom": "18.1.0",
