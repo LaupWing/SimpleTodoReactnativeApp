@@ -1,6 +1,7 @@
 import { LinearGradient } from "expo-linear-gradient"
 import { SafeAreaView, Text, TouchableOpacity, View } from "react-native"
 import { AntDesign } from "@expo/vector-icons"
+import "expo-dev-client"
 
 const App = () => {
    return (
