@@ -26,6 +26,7 @@
         "backgroundColor": "#FFFFFF"
       }
     },
+    "plugins": ["@react-native-google-signin/google-signin"],
     "web": {
       "favicon": "./assets/favicon.png"
     }
