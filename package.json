@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@react-native-firebase/app": "^17.0.0",
     "expo": "^47.0.0",
     "expo-dev-client": "~2.0.1",
     "expo-linear-gradient": "~12.0.1",
