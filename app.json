@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ReactNativeTodoApp",
-    "slug": "todo-app",
+    "name": "test",
+    "slug": "test",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,11 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.laupwing.test"
     },
-    "plugins": ["@react-native-google-signin/google-signin"],
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5329e3e8-6e8f-44aa-b5cd-6fc95fa72ae0"
+      }
     }
   }
 }
