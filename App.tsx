@@ -2,8 +2,18 @@ import { LinearGradient } from "expo-linear-gradient"
 import { SafeAreaView, Text, TouchableOpacity, View } from "react-native"
 import { AntDesign } from "@expo/vector-icons"
 import "expo-dev-client"
+import { GoogleSignin } from "@react-native-google-signin/google-signin"
+import auth from "@react-native-firebase/auth"
+import { useEffect } from "react"
+
+GoogleSignin.configure({
+   webClientId: "1088828136827-j7d12v5bk9mo2uq7pjsab99qhea2r9po.apps.googleusercontent.com"
+})
 
 const App = () => {
+   useEffect(() => {
+
+   }, [])
    return (
       <SafeAreaView className="flex items-center justify-center flex-1 w-full">
          <LinearGradient
