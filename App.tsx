@@ -21,8 +21,11 @@ const App = () => {
       const { idToken } = await GoogleSignin.signIn()
     
       const googleCredential = auth.GoogleAuthProvider.credential(idToken)
-    
-      return auth().signInWithCredential(googleCredential)
+      try{
+         await auth().signInWithCredential(googleCredential)
+      }catch(e){
+         console.log(e)
+      }
     }
 
    const onAuthStateChanged: FirebaseAuthTypes.AuthListenerCallback = (
