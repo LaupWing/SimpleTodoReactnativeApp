@@ -20,7 +20,7 @@ const App = () => {
                         size={20}
                         color="red"
                      />
-                     <Text className="ml-1">Login with Google</Text>
+                     <Text className="ml-1"> Google</Text>
                   </TouchableOpacity>
                </View>
             </View>
