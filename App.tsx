@@ -32,12 +32,13 @@ const App = () => {
       user
    ) => {
       setUser(user)
+      console.log(user)
       if (initializing) setInitializing(false)
    }
 
    useEffect(() => {
       const subscriber = auth().onAuthStateChanged(onAuthStateChanged)
-      return subscriber // unsubscribe on unmount
+      return subscriber
    }, [])
 
    if (initializing) return null
