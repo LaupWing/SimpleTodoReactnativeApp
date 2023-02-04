@@ -2,30 +2,33 @@ import { LinearGradient } from "expo-linear-gradient"
 import { SafeAreaView, Text, TouchableOpacity, View } from "react-native"
 import { AntDesign } from "@expo/vector-icons"
 import "expo-dev-client"
-import { GoogleSignin } from "@react-native-google-signin/google-signin"
+import { GoogleSignin, GoogleSigninButton } from "@react-native-google-signin/google-signin"
 import auth from "@react-native-firebase/auth"
 import { useEffect, useState } from "react"
 import { FirebaseAuthTypes } from "@react-native-firebase/auth"
 
 GoogleSignin.configure({
-   webClientId: "1088828136827-j7d12v5bk9mo2uq7pjsab99qhea2r9po.apps.googleusercontent.com"
+   webClientId:
+      "1088828136827-j7d12v5bk9mo2uq7pjsab99qhea2r9po.apps.googleusercontent.com",
 })
 
 const App = () => {
    const [initializing, setInitializing] = useState(true)
-   const [user, setUser] = useState<FirebaseAuthTypes.User|null>(null)
+   const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null)
 
-   const onAuthStateChanged:FirebaseAuthTypes.AuthListenerCallback = (user)=> {
+   const onAuthStateChanged: FirebaseAuthTypes.AuthListenerCallback = (
+      user
+   ) => {
       setUser(user)
       if (initializing) setInitializing(false)
-    }
-  
-    useEffect(() => {
+   }
+
+   useEffect(() => {
       const subscriber = auth().onAuthStateChanged(onAuthStateChanged)
-      return subscriber; // unsubscribe on unmount
-    }, [])
-  
-    if (initializing) return null
+      return subscriber // unsubscribe on unmount
+   }, [])
+
+   if (initializing) return null
 
    return (
       <SafeAreaView className="flex items-center justify-center flex-1 w-full">
@@ -34,17 +37,12 @@ const App = () => {
             colors={["#6366f1", "#a855f7", "#ec4899"]}
          >
             <View className="p-4 bg-white rounded mx-6 shadow">
-               <Text className="font-bold text-neutral-700 text-center text-2xl">Login</Text>
+               <Text className="font-bold text-neutral-700 text-center text-2xl">
+                  Login
+               </Text>
 
                <View className="p-1 mt-4">
-                  <TouchableOpacity className="bg-neutral-50 py-2.5 flex border flex-row border-neutral-200 px-2 rounded">
-                     <AntDesign
-                        name="google"
-                        size={20}
-                        color="red"
-                     />
-                     <Text className="ml-1"> Google</Text>
-                  </TouchableOpacity>
+                  <GoogleSigninButton className="flex-1 bg-red-400"/>
                </View>
             </View>
          </LinearGradient>
