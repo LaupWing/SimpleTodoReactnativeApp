@@ -12,6 +12,11 @@ GoogleSignin.configure({
       "1088828136827-j7d12v5bk9mo2uq7pjsab99qhea2r9po.apps.googleusercontent.com",
 })
 
+export type RootStackParamsList ={
+   Home: undefined
+   Login: undefined
+}
+
 const App = () => {
    const [initializing, setInitializing] = useState(true)
    const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null)
