@@ -4,16 +4,29 @@ import { AntDesign } from "@expo/vector-icons"
 import "expo-dev-client"
 import { GoogleSignin } from "@react-native-google-signin/google-signin"
 import auth from "@react-native-firebase/auth"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { FirebaseAuthTypes } from "@react-native-firebase/auth"
 
 GoogleSignin.configure({
    webClientId: "1088828136827-j7d12v5bk9mo2uq7pjsab99qhea2r9po.apps.googleusercontent.com"
 })
 
 const App = () => {
-   useEffect(() => {
+   const [initializing, setInitializing] = useState(true)
+   const [user, setUser] = useState<FirebaseAuthTypes.User|null>(null)
 
-   }, [])
+   const onAuthStateChanged:FirebaseAuthTypes.AuthListenerCallback = (user)=> {
+      setUser(user)
+      if (initializing) setInitializing(false)
+    }
+  
+    useEffect(() => {
+      const subscriber = auth().onAuthStateChanged(onAuthStateChanged)
+      return subscriber; // unsubscribe on unmount
+    }, [])
+  
+    if (initializing) return null
+
    return (
       <SafeAreaView className="flex items-center justify-center flex-1 w-full">
          <LinearGradient
