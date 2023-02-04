@@ -16,6 +16,15 @@ const App = () => {
    const [initializing, setInitializing] = useState(true)
    const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null)
 
+   async function onGoogleButtonPress() {
+      await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true })
+      const { idToken } = await GoogleSignin.signIn()
+    
+      const googleCredential = auth.GoogleAuthProvider.credential(idToken)
+    
+      return auth().signInWithCredential(googleCredential)
+    }
+
    const onAuthStateChanged: FirebaseAuthTypes.AuthListenerCallback = (
       user
    ) => {
@@ -42,7 +51,7 @@ const App = () => {
                </Text>
 
                <View className="p-1 mt-4">
-                  <GoogleSigninButton className="flex-1 bg-red-400"/>
+                  <GoogleSigninButton onPress={onGoogleButtonPress} className="flex-1 bg-red-400"/>
                </View>
             </View>
          </LinearGradient>
