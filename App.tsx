@@ -6,6 +6,7 @@ import { GoogleSignin, GoogleSigninButton } from "@react-native-google-signin/go
 import auth from "@react-native-firebase/auth"
 import { useEffect, useState } from "react"
 import { FirebaseAuthTypes } from "@react-native-firebase/auth"
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
 
 GoogleSignin.configure({
    webClientId:
@@ -16,6 +17,8 @@ export type RootStackParamsList ={
    Home: undefined
    Login: undefined
 }
+
+const Stack = createNativeStackNavigator<RootStackParamsList>()
 
 const App = () => {
    const [initializing, setInitializing] = useState(true)
