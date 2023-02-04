@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1088828136827",
+    "project_id": "todo-app-17207",
+    "storage_bucket": "todo-app-17207.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088828136827:android:e4d005a3ab4058171bf1de",
+        "android_client_info": {
+          "package_name": "com.laupwing.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1088828136827-c7jdo73om66nubjuhv8qo125ac2eg1n7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.laupwing.test",
+            "certificate_hash": "d341d48856b9a44d6a2ee648adef9c367febeb9e"
+          }
+        },
+        {
+          "client_id": "1088828136827-ebt76oc1ffv524he0h6nbkuefp69tqlo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.laupwing.test",
+            "certificate_hash": "e37cf4d52b8144b0e22a7393741b75d435bb08d6"
+          }
+        },
+        {
+          "client_id": "1088828136827-j7d12v5bk9mo2uq7pjsab99qhea2r9po.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeiChUvtKalGvGpVDbS-oEQA01jO6MyyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1088828136827-j7d12v5bk9mo2uq7pjsab99qhea2r9po.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
