@@ -6,8 +6,8 @@ import { GoogleSignin, GoogleSigninButton } from "@react-native-google-signin/go
 import auth from "@react-native-firebase/auth"
 import { useEffect, useState } from "react"
 import { FirebaseAuthTypes } from "@react-native-firebase/auth"
-// import { createNativeStackNavigator } from "@react-navigation/native-stack"
-// import { NavigationContainer } from "@react-navigation/native"
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import { NavigationContainer } from "@react-navigation/native"
 import LoginScreen from "./screens/LoginScreen"
 
 GoogleSignin.configure({
@@ -15,12 +15,12 @@ GoogleSignin.configure({
       "1088828136827-j7d12v5bk9mo2uq7pjsab99qhea2r9po.apps.googleusercontent.com",
 })
 
-// export type RootStackParamsList ={
-//    Home: undefined
-//    Login: undefined
-// }
+export type RootStackParamsList ={
+   Home: undefined
+   Login: undefined
+}
 
-// const Stack = createNativeStackNavigator<RootStackParamsList>()
+const Stack = createNativeStackNavigator<RootStackParamsList>()
 
 const App = () => {
    const [initializing, setInitializing] = useState(true)
@@ -42,19 +42,21 @@ const App = () => {
    if (initializing) return null
 
    return (
-      <SafeAreaView className="flex items-center justify-center flex-1 w-full">
-         <LinearGradient
-            className="flex-1 w-full justify-center"
-            colors={["#6366f1", "#a855f7", "#ec4899"]}
-         >
-            {/* <Stack.Navigator>
-               <Stack.Screen
-                  name="Login"
-                  component={LoginScreen}
-               />
-            </Stack.Navigator> */}
-         </LinearGradient>
-      </SafeAreaView>
+      <NavigationContainer>
+         <SafeAreaView className="flex items-center justify-center flex-1 w-full">
+            <LinearGradient
+               className="flex-1 w-full justify-center"
+               colors={["#6366f1", "#a855f7", "#ec4899"]}
+            >
+               <Stack.Navigator>
+                  <Stack.Screen
+                     name="Login"
+                     component={LoginScreen}
+                  />
+               </Stack.Navigator>
+            </LinearGradient>
+         </SafeAreaView>
+      </NavigationContainer>
    )
 }
 
