@@ -16,7 +16,7 @@ GoogleSignin.configure({
 })
 
 export type RootStackParamsList ={
-   Home: undefined
+   // Home: undefined
    Login: undefined
 }
 
@@ -51,7 +51,7 @@ const App = () => {
                <Stack.Navigator>
                   <Stack.Screen
                      name="Login"
-                     component={LoginScreen}
+                     component={()=><Text>Login</Text>}
                   />
                </Stack.Navigator>
             </LinearGradient>
